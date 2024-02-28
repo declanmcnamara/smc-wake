@@ -1,0 +1,51 @@
+defaults:
+  - override hydra/launcher: joblib
+
+hydra:
+  launcher:
+    n_jobs: 4
+
+seed: 789243
+dir: '/home/declan/current/smc-wake'
+
+data:
+  bigger_range: 5.
+  smaller_range: 1.
+  n_pts: 100
+  prior_broad: False
+
+training:
+  device: 'cpu'
+  epochs: 50000
+  lr: 1e-4
+  grad_clip: 1
+  mb_size: 16
+  loss: 'wake'
+
+encoder:
+  type: 'flow'
+  run: true
+
+smc:
+  K: 1000
+  refresh_rate: 10
+  run: true
+  num_init: 1
+  n_resample: 10
+
+plots:
+  indices: [0,4,10,16,20,25]
+  losses: ['smcwake', 'favi']
+  alphas: [.5, .45, .4, .35, .3, .25, .2, .15, .1, .05]
+  lr: 1e-4
+  n_test_points: 1000
+  wake_range: 1000
+  num_panels: 10
+  plot_panels: false
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+.venv
+.new_venv
+**/logs/*
+**/multirun/*
+**/outputs/*
+**/weights/*
+**/__pycache__/*
+**/.ipynb_checkpoints/*
